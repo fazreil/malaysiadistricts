@@ -1,10 +1,14 @@
 {
   "name": "malaysiadistricts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "a collection of districts in Malaysia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server.js",
+    "prod": "NODE_ENV=production node build/server-bundle.js",
+    "dev": "node --inspect ./server.js",
+    "build:server": "BABEL_ENV=production webpack --config=config/webpack.server.js --env.NODE_ENV=production"
   },
   "repository": {
     "type": "git",
@@ -24,13 +28,20 @@
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",
-    "@babel/preset-env": "^7.6.2"
+    "@babel/preset-env": "^7.6.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "cors": "^2.8.4",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "graphql": "^14.5.8",
-    "sqlite3": "^4.0.2"
+    "sqlite3": "^4.0.2",
+    "webpack": "^4.41.2"
   }
 }
